@@ -1,0 +1,193 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7E730FF2-82CF-4E37-A1DA-65626144682F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Engine</RootNamespace>
+    <AssemblyName>Engine</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="ApplicationConfig.cs" />
+    <Compile Include="Assets\AnimationAsset.cs" />
+    <Compile Include="Assets\AssetManager.cs" />
+    <Compile Include="Assets\DisposableAsset.cs" />
+    <Compile Include="Assets\FontAsset.cs" />
+    <Compile Include="Assets\FontLoader\ResourceFontCollectionLoader.cs" />
+    <Compile Include="Assets\FontLoader\ResourceFontFileEnumerator.cs" />
+    <Compile Include="Assets\FontLoader\ResourceFontFileStream.cs" />
+    <Compile Include="Assets\BrushAsset.cs" />
+    <Compile Include="Assets\TextureAsset.cs" />
+    <Compile Include="CommandConsole.cs" />
+    <Compile Include="CommandConsole.InputView.cs" />
+    <Compile Include="CommandConsole.OutputView.cs" />
+    <Compile Include="ConcurrentDelegate.cs" />
+    <Compile Include="ConcurrentLinkedList.cs" />
+    <Compile Include="Config.cs" />
+    <Compile Include="Controls\ControlAddedEventArgs.cs" />
+    <Compile Include="Controls\ControlBase.cs" />
+    <Compile Include="Controls\ControlContainer.cs" />
+    <Compile Include="Controls\ControlEventArgs.cs" />
+    <Compile Include="Controls\DrawableControlBase.cs" />
+    <Compile Include="Controls\Image.cs" />
+    <Compile Include="Controls\ResizeOptions.cs" />
+    <Compile Include="Controls\ScrollableContainer.cs" />
+    <Compile Include="Interface\IControl.cs" />
+    <Compile Include="Interface\IControlManager.cs" />
+    <Compile Include="Interface\IAssetManager.cs" />
+    <Compile Include="Interface\IControlParent.cs" />
+    <Compile Include="Interface\IEngineComponent.cs" />
+    <Compile Include="FontResource.cs" />
+    <Compile Include="GameApplication.cs" />
+    <Compile Include="GameApplication.OutputStreams.cs" />
+    <Compile Include="GameTimer.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="Controls\Alignment.cs" />
+    <Compile Include="Controls\Button.cs" />
+    <Compile Include="Controls\ClickableControl.cs" />
+    <Compile Include="Controls\GUIConfig.cs" />
+    <Compile Include="Controls\ControlIntent.cs" />
+    <Compile Include="Controls\ControlManager.cs" />
+    <Compile Include="Controls\Label.cs" />
+    <Compile Include="Controls\ControlState.cs" />
+    <Compile Include="Controls\FillOptions.cs" />
+    <Compile Include="Controls\LayoutType.cs" />
+    <Compile Include="Controls\Notification.cs" />
+    <Compile Include="Controls\TextSize.cs" />
+    <Compile Include="Controls\Titlebar.cs" />
+    <Compile Include="Controls\Window.cs" />
+    <Compile Include="Input\InputState.cs" />
+    <Compile Include="Input\Keyboard.cs" />
+    <Compile Include="Input\KeyboardEventArgs.cs" />
+    <Compile Include="Input\KeyboardInput.cs" />
+    <Compile Include="Input\Mouse.cs" />
+    <Compile Include="Input\MouseButton.cs" />
+    <Compile Include="Input\MouseButtonEventArgs.cs" />
+    <Compile Include="Input\MouseInput.cs" />
+    <Compile Include="Input\MouseVectorEventArgs.cs" />
+    <Compile Include="Input\PressedState.cs" />
+    <Compile Include="Interface\IHandleKeyboardHeld.cs" />
+    <Compile Include="Interface\IHandleKeyboardPressed.cs" />
+    <Compile Include="Interface\IHandleKeyboardReleased.cs" />
+    <Compile Include="Interface\IHandleMouseButtonHeld.cs" />
+    <Compile Include="Interface\IHandleMouseButtonPressed.cs" />
+    <Compile Include="Interface\IHandleMouseButtonReleased.cs" />
+    <Compile Include="Interface\IHandleMouseMotion.cs" />
+    <Compile Include="Interface\IHandleMousePosition.cs" />
+    <Compile Include="Interface\IHandleMouseScrollWheel.cs" />
+    <Compile Include="Interface\IKeyboardHandler.cs" />
+    <Compile Include="Interface\ILoadable.cs" />
+    <Compile Include="Interface\IMouseHandler.cs" />
+    <Compile Include="Interface\IRenderable.cs" />
+    <Compile Include="Interface\IUpdateable.cs" />
+    <Compile Include="Input\MouseScrollEventArgs.cs" />
+    <Compile Include="IntervalTimer.cs" />
+    <Compile Include="Lua\Libraries\GUI.cs" />
+    <Compile Include="Lua\Libraries\SharpDX.cs" />
+    <Compile Include="Lua\LuaCommandAttribute.cs" />
+    <Compile Include="Lua\LuaCommandUsageAttribute.cs" />
+    <Compile Include="Lua\LuaEnvironment.cs" />
+    <Compile Include="Lua\LuaExcludeAttribute.cs" />
+    <Compile Include="Lua\LuaLibraryAttribute.cs" />
+    <Compile Include="Lua\LuaValueConverter.cs" />
+    <Compile Include="MathHelper.cs" />
+    <Compile Include="Pool.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="EmbeddedContent\fonts\ProFontWindows.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="EmbeddedContent\fonts\TimeburnerRegular.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Lua, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>EmbeddedContent\Lua.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpDX, Version=2.4.2.0, Culture=neutral, PublicKeyToken=627a3d6d1956f55a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>EmbeddedContent\SharpDX.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpDX.Direct2D1, Version=2.4.2.0, Culture=neutral, PublicKeyToken=627a3d6d1956f55a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>EmbeddedContent\SharpDX.Direct2D1.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpDX.Direct3D10, Version=2.4.2.0, Culture=neutral, PublicKeyToken=627a3d6d1956f55a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>EmbeddedContent\SharpDX.Direct3D10.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpDX.DirectInput, Version=2.4.2.0, Culture=neutral, PublicKeyToken=627a3d6d1956f55a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>EmbeddedContent\SharpDX.DirectInput.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpDX.DXGI, Version=2.4.2.0, Culture=neutral, PublicKeyToken=627a3d6d1956f55a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>EmbeddedContent\SharpDX.DXGI.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="EmbeddedContent\fonts\VeraMono.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="EmbeddedContent\fonts\whitrabt.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="EmbeddedContent\fonts\Resagnicto.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="config\config.cfg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="config\gui.cfg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\textures\GUI\buttons\window_close.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\warning.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
